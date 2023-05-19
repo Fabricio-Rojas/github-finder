@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/github-finder/static/css/main.695fcbe0.css",
-    "main.js": "/github-finder/static/js/main.44d77941.js",
+    "main.js": "/github-finder/static/js/main.6d103356.js",
     "index.html": "/github-finder/index.html",
     "main.695fcbe0.css.map": "/github-finder/static/css/main.695fcbe0.css.map",
-    "main.44d77941.js.map": "/github-finder/static/js/main.44d77941.js.map"
+    "main.6d103356.js.map": "/github-finder/static/js/main.6d103356.js.map"
   },
   "entrypoints": [
     "static/css/main.695fcbe0.css",
-    "static/js/main.44d77941.js"
+    "static/js/main.6d103356.js"
   ]
 }
