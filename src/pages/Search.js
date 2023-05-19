@@ -27,7 +27,7 @@ function Search() {
       return;
     }
     setErrorMessage('');
-    navigate(`user/${inputValue}`);
+    navigate(`/github-finder/user/${inputValue}`);
     setInputValue('');
   }
 
