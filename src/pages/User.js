@@ -15,7 +15,7 @@ function User() {
 
   const {username} = useParams();
 
-  const token = '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';
+  const token = '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';
   const options = {headers: { Authorization: `Bearer ${token}`}};
 
   let userEndpoint = `https://api.github.com/users/${username}`;
