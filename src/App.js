@@ -13,7 +13,7 @@ function App() {
         />
         <Route
           exact
-          path="user/:username"
+          path="/user/:username"
           element={<User />}
         />
       </Routes>

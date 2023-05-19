@@ -22,30 +22,24 @@ function Search() {
       setErrorMessage('Please write a username');
       return;
     }
-    if (!userNameExists) {
-      setErrorMessage('Invalid user name, try again');
-      return;
-    }
-    setErrorMessage('');
-    navigate(`/github-finder/user/${inputValue}`);
-    setInputValue('');
+    getData();
   }
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const userResponse = await axios.get(userEndpoint);
-        setUserNameExists(true);
-        console.log(userResponse.data);
-      } catch (error) {
-        console.log(error);
-        setUserNameExists(false);
-      }
+  const getData = async () => {
+    try {
+      const userResponse = await axios.get(userEndpoint);
+      setUserNameExists(true);
+      console.log(userResponse.data);
+      navigate(`/user/${inputValue}`);
+      setErrorMessage('');
+      setInputValue('');
+    } catch (error) {
+      console.log(error);
+      setUserNameExists(false);
+      setErrorMessage('Invalid user name, try again');
+      setInputValue('');
     }
-
-    if (inputValue) getData();
-    // eslint-disable-next-line
-  }, [inputValue])
+  }
 
   return (
     <div className='search-form'>
@@ -57,6 +51,7 @@ function Search() {
             placeholder='User Name'
             onChange={handleChange}
             ref={inputRef}
+            value={inputValue}
         />
         <input
             type='submit'
