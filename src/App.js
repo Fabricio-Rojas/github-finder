@@ -8,12 +8,12 @@ function App() {
       <Routes>
         <Route
           exact
-          path="/"
+          path="/github-finder/"
           element={<Search />}
         />
         <Route
           exact
-          path="/user/:username"
+          path="/github-finder/user/:username"
           element={<User />}
         />
       </Routes>
