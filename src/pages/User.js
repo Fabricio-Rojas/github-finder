@@ -15,9 +15,6 @@ function User() {
 
   const {username} = useParams();
 
-  const token = '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';
-  const options = {headers: { Authorization: `Bearer ${token}`}};
-
   let userEndpoint = `https://api.github.com/users/${username}`;
   let userReposEndpoint = `https://api.github.com/users/${username}/repos`;
 
@@ -25,8 +22,8 @@ function User() {
 
     const getData = async () => {
       try {
-        const userResponse = await axios.get(userEndpoint, options);
-        const reposResponse = await axios.get(userReposEndpoint, options);
+        const userResponse = await axios.get(userEndpoint);
+        const reposResponse = await axios.get(userReposEndpoint);
         console.log(userResponse.data);
         setUserPFP(userResponse.data.avatar_url);
         setUserIRLName(userResponse.data.name);

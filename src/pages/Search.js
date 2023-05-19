@@ -9,9 +9,6 @@ function Search() {
   const [userNameExists, setUserNameExists] = useState(true);
   const navigate = useNavigate();
 
-  const token = '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';
-  const options = {headers: { Authorization: `Bearer ${token}`}};
-
   let userEndpoint = `https://api.github.com/users/${inputValue}`;
 
   const handleChange = (event) => {
@@ -37,7 +34,7 @@ function Search() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const userResponse = await axios.get(userEndpoint, options);
+        const userResponse = await axios.get(userEndpoint);
         setUserNameExists(true);
         console.log(userResponse.data);
       } catch (error) {
